@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.stylefeng.guns.modular.art.mapper.ExchangeMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="cn.stylefeng.guns.modular.art.entity.Exchange">
+        <id column="id" property="id" />
+        <result column="art_id" property="artId" />
+        <result column="app_time" property="appTime" />
+        <result column="reason" property="reason" />
+        <result column="user" property="user" />
+        <result column="exchange_loc" property="exchangeLoc" />
+        <result column="receiver" property="receiver" />
+        <result column="est_return_time" property="estReturnTime" />
+        <result column="return_id" property="returnId" />
+        <result column="operator" property="operator" />
+        <result column="ope_time" property="opeTime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id AS "id", art_id AS "artId", app_time AS "appTime", reason AS "reason", user AS "user", exchange_loc AS "exchangeLoc", receiver AS "receiver", est_return_time AS "estReturnTime", return_id AS "returnId", operator AS "operator", ope_time AS "opeTime"
+    </sql>
+
+
+    <select id="customList" resultType="cn.stylefeng.guns.modular.art.model.result.ExchangeResult" parameterType="cn.stylefeng.guns.modular.art.model.params.ExchangeParam">
+        select
+        <include refid="Base_Column_List"/>
+        from t_art_exchange where 1 = 1
+    </select>
+
+    <select id="customMapList" resultType="map" parameterType="cn.stylefeng.guns.modular.art.model.params.ExchangeParam">
+        select
+        <include refid="Base_Column_List"/>
+        from t_art_exchange where 1 = 1
+    </select>
+
+    <select id="customPageList" resultType="cn.stylefeng.guns.modular.art.model.result.ExchangeResult" parameterType="cn.stylefeng.guns.modular.art.model.params.ExchangeParam">
+        select
+        <include refid="Base_Column_List"/>
+        from t_art_exchange where 1 = 1
+    </select>
+
+    <select id="customPageMapList" resultType="map" parameterType="cn.stylefeng.guns.modular.art.model.params.ExchangeParam">
+        select
+        <include refid="Base_Column_List"/>
+        from t_art_exchange where 1 = 1
+    </select>
+
+</mapper>
